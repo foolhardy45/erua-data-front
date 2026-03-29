@@ -1,64 +1,61 @@
-# FrontErua
+# ERUA DATA — Frontend Angular
 
-FrontErua est une application web développée avec [Angular](https://angular.io/) (v17.2.2).
+Application web de visualisation et d'exploration d'un graphe de connaissances reliant artistes, œuvres et mouvements artistiques.
 
-## Prérequis
+## Aperçu
 
-- [Node.js](https://nodejs.org/) >= 18.x
-- [npm](https://www.npmjs.com/) >= 9.x
-- [Angular CLI](https://angular.io/cli) >= 17.x
+ERUA DATA permet aux chercheurs en histoire de l'art d'explorer les relations entre artistes et œuvres à travers un graphe interactif.
+
+Le principe : un artiste pratiquant le cubisme est relié à d'autres artistes du même mouvement. En suivant ces liens, on peut découvrir des connexions artistiques, des influences croisées et des parcours stylistiques entre différentes époques et courants.
+
+C'est un graphe de connaissances — similaire dans le concept à Neo4j — mais spécialisé pour le domaine artistique.
+
+### Fonctionnalités
+
+- Visualisation interactive du graphe de relations entre artistes et œuvres
+- Navigation par liens : artiste → mouvement → autres artistes
+- Recherche d'artistes et d'œuvres
+- Création et édition de liens entre les entités (artistes, œuvres, mouvements)
+
+## Stack technique
+
+| Technologie | Usage |
+|-------------|-------|
+| Angular | Framework frontend |
+| TypeScript | Langage |
+| REST API | Communication avec le backend |
 
 ## Installation
-
-Clonez le dépôt puis installez les dépendances :
-
 ```bash
-git clone <url-du-repo>
-cd FrontErua
 npm install
-
+ng serve
 ```
-## Development server
 
-Lancez `ng serve` pour un serveur de développement. Naviguez jusqu'à `http://localhost:4200/`. L'application sera
-automatiquement rechargée si vous modifiez l'un des fichiers sources.
+Application accessible sur `http://localhost:4200`.
 
 ## Structure du projet
+```text
+src/
+├── app/
+│   ├── components/    # Composants réutilisables (graphe, cartes, recherche)
+│   ├── pages/         # Pages principales
+│   ├── services/      # Services API
+│   └── models/        # Interfaces TypeScript
+├── environments/
+└── main.ts
+```
 
-Le projet est structuré de la manière suivante :
+---
 
-- src/app/: Composants, services et module Angular.
-- src/app/models : Modèles de données utilisés dans l'application.
-- src/app/services : Services Angular pour la logique métier et les appels API.
-- src/app/components : Composants Angular pour l'interface utilisateur.
-- src/app/layouts : Composants de mise en page pour organiser l'interface utilisateur.
-- src/assets/ : Ressources statiques (images, styles, etc.).
-- src/environments/ : Fichiers de configuration pour différents environnements (développement, production).
+## Contexte & contribution
 
-## Code scaffolding
+Projet réalisé en équipe dans le cadre de la SAÉ S4 — BUT2 Informatique, IUT de Montreuil.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+**Mon rôle :**
+- Développement complet du frontend Angular
+- Conception de l'interface de visualisation du graphe
+- Intégration des services API pour la récupération et la manipulation des données
 
-## Build
+### Repo lié
 
-Lancez `ng generate component component-name` pour générer un nouveau composant. Vous pouvez également utiliser
-`ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
-
-## Ressources Utiles
-
-- [Documentation Angular](https://angular.io/docs)
-- [Angular Material](https://material.angular.io/)
-
-<hr> © FrontErua - 2025
+- [erua-data-back](https://github.com/tayrell/erua-data-back) — Backend API
